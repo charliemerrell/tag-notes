@@ -23,13 +23,13 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function SignUp() {
+export default function Login() {
     const classes = useStyles();
 
     return (
         <Container className={classes.paper} component="main" maxWidth="xs">
             <Typography component="h1" variant="h5">
-                Sign up
+                Login
             </Typography>
             <form className={classes.form} noValidate>
                 <Grid container spacing={2}>
@@ -64,12 +64,12 @@ export default function SignUp() {
                     color="primary"
                     className={classes.submit}
                 >
-                    Sign Up
+                    Login
                 </Button>
                 <Grid container justify="flex-end">
                     <Grid item>
-                        <Link href="/login" variant="body2">
-                            Already have an account? Sign in
+                        <Link href="/signup" variant="body2">
+                            Don't have an account yet? Sign up
                         </Link>
                     </Grid>
                 </Grid>
