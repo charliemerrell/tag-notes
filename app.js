@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api/users", userRouter);
 app.use("/api/sessions", sessionRouter);
 
-db.sync({ force: true });
+db.sync();
 
 app.get("/api/hello", (req, res) => {
     res.send("Hello, World");
