@@ -3,7 +3,7 @@ const path = require("path");
 
 const app = express();
 
-app.use(express.static(path.resolve(__dirname, "../build")));
+app.use(express.static(path.resolve(__dirname, "./client/build")));
 
 app.get("/api/hello", (req, res) => {
     res.send("Hello, World");
