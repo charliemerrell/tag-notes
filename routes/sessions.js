@@ -16,8 +16,8 @@ router.post("/", async (req, res) => {
         res.sendStatus(404);
         return;
     }
-    const token = await generateAccessToken(user.id);
-    res.status(201).json(token);
+    const jwt = await generateAccessToken(user.id);
+    res.status(201).json({ jwt });
 });
 
 module.exports = router;

@@ -9,7 +9,7 @@ router.post("/", async (req, res) => {
     const passwordHash = await bcrypt.hash(password, 10);
     const user = await User.create({ email, passwordHash });
     const jwt = await generateAccessToken(user.id);
-    res.status(201).json(jwt);
+    res.status(201).json({ jwt });
 });
 
 module.exports = router;

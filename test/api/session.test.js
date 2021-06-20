@@ -11,7 +11,12 @@ describe("session tests", () => {
             .post("/api/sessions")
             .send(seedData.users[0])
             .set("Accept", "application/json")
-            .expect(201, done);
+            .expect(201)
+            .then((response) => {
+                expect(response.body.jwt).toBeDefined();
+                done();
+            })
+            .catch((err) => done(err));
     });
     it("returns a 404 when incorrect user data POSTed", (done) => {
         let { email, password } = seedData.users[0];
